@@ -231,7 +231,8 @@
             cursor: pointer;
             font-weight: 700;
             transition: background 0.25s, transform 0.2s;
-            clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+            clip-path: none;
+            border-radius: 30px;
         }
 
         .nav-cta:hover {
@@ -429,20 +430,21 @@
             animation: fadeUp 0.9s 0.75s both;
         }
 
-        .btn-primary {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 15px;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            font-weight: 700;
-            background: var(--gold);
-            color: var(--black);
-            border: none;
-            padding: 17px 44px;
-            cursor: pointer;
-            transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
-            clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
-        }
+    .btn-primary {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    background: var(--gold);
+    color: var(--black);
+    border: none;
+    padding: 17px 44px;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+    clip-path: none;
+    border-radius: 30px;
+}
 
         .btn-primary:hover {
             background: var(--gold-light);
@@ -451,18 +453,19 @@
         }
 
         .btn-outline {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 15px;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            font-weight: 600;
-            background: transparent;
-            color: var(--silver);
-            border: 1px solid rgba(184, 196, 204, 0.35);
-            padding: 17px 44px;
-            cursor: pointer;
-            transition: border-color 0.25s, color 0.25s, transform 0.2s;
-        }
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    background: transparent;
+    color: var(--silver);
+    border: 1px solid rgba(184, 196, 204, 0.35);
+    padding: 17px 44px;
+    cursor: pointer;
+    transition: border-color 0.25s, color 0.25s, transform 0.2s;
+    border-radius: 20pc;
+}
 
         .btn-outline:hover {
             border-color: var(--gold);
@@ -824,7 +827,7 @@
         }
 
         .section-body {
-            font-size: 20px;
+            font-size: 17px;
             line-height: 1.75;
             color: var(--silver);
             max-width: 560px;
@@ -974,7 +977,7 @@
         }
 
         .fleet-desc {
-            font-size: 16px;
+            font-size: 14px;
             color: var(--silver);
             line-height: 1.65;
             max-width: 260px;
@@ -1128,7 +1131,7 @@
             display: flex;
             align-items: center;
             gap: 5px;
-            font-size: 17px;
+            font-size: 13px;
             color: var(--text-muted);
             font-family: 'Barlow Condensed', sans-serif;
             letter-spacing: 0.5px;
@@ -1687,7 +1690,7 @@
             gap: 16px;
             padding: 20px 0;
             border-bottom: 1px solid var(--black-border);
-            font-size: 20px;
+            font-size: 16px;
             color: var(--silver);
             line-height: 1.55;
         }
@@ -1849,7 +1852,7 @@
         }
 
         .review-text {
-            font-size: 20px;
+            font-size: 16px;
             color: var(--silver);
             line-height: 1.8;
             font-style: italic;
@@ -1868,7 +1871,7 @@
 
         .review-stars {
             color: var(--gold);
-            font-size: 19px;
+            font-size: 15px;
             letter-spacing: 3px;
             margin-bottom: 18px;
             text-shadow: 0 0 10px rgba(201, 168, 76, 0.4);
@@ -2099,6 +2102,295 @@
         /* ─────────────────────────────────────────
      RESPONSIVE
   ───────────────────────────────────────── */
+        /* ─────────────────────────────────────────
+     RECENT CARS SECTION
+  ───────────────────────────────────────── */
+        .recent-section {
+            background: var(--black);
+            border-top: 1px solid var(--black-border);
+        }
+
+        .recent-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 3px;
+            margin-top: 50px;
+        }
+
+        .recent-card {
+            background: #1a1a1c;
+            border: 1px solid #2a2a2e;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .recent-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .recent-card:hover::before { transform: scaleX(1); }
+
+        .recent-card:hover {
+            border-color: rgba(201,168,76,0.45);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 30px rgba(201,168,76,0.05);
+        }
+
+        .recent-card-img {
+            position: relative;
+            height: 190px;
+            background: #111113;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .recent-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
+        }
+
+        .recent-card:hover .recent-card-img img { transform: scale(1.06); }
+
+        .recent-card-img-count {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(10,10,11,0.82);
+            border: 1px solid rgba(201,168,76,0.3);
+            color: var(--gold);
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            padding: 4px 10px;
+        }
+
+        .recent-compare {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 12px;
+            letter-spacing: 1px;
+            color: var(--silver);
+            background: rgba(10,10,11,0.75);
+            padding: 4px 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .recent-compare input { width: 13px; height: 13px; cursor: pointer; accent-color: var(--gold); }
+
+        .recent-card-body {
+            padding: 20px 22px 22px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .recent-card-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 26px;
+            letter-spacing: 1.5px;
+            color: var(--gold);
+            line-height: 1.1;
+            margin-bottom: 14px;
+        }
+
+        .recent-specs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            border: 1px solid #2e2e32;
+            margin-bottom: 16px;
+        }
+
+        .recent-spec {
+            padding: 10px 12px;
+            border-right: 1px solid #2e2e32;
+        }
+
+        .recent-spec:last-child { border-right: none; }
+        .recent-spec:nth-child(4), .recent-spec:nth-child(5), .recent-spec:nth-child(6) {
+            border-top: 1px solid #2e2e32;
+        }
+
+        .recent-spec-label {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 3px;
+        }
+
+        .recent-spec-val {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .recent-ids {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border: 1px solid #2e2e32;
+            border-top: none;
+            margin-bottom: 16px;
+        }
+
+        .recent-id-item {
+            padding: 8px 12px;
+        }
+
+        .recent-id-item:first-child { border-right: 1px solid #2e2e32; }
+
+        .recent-card-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 0;
+            margin-top: auto;
+        }
+
+        .recent-action-btn {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 11px 6px;
+            cursor: pointer;
+            border: 1px solid #2e2e32;
+            border-left: none;
+            text-align: center;
+            transition: background 0.2s, color 0.2s, border-color 0.2s;
+        }
+
+        .recent-action-btn:first-child { border-left: 1px solid #2e2e32; }
+
+        .recent-action-btn.primary {
+            background: var(--gold);
+            color: var(--black);
+            border-color: var(--gold);
+        }
+
+        .recent-action-btn.primary:hover { background: var(--gold-light); }
+
+        .recent-action-btn:not(.primary) {
+            background: #111113;
+            color: var(--silver);
+        }
+
+        .recent-action-btn:not(.primary):hover {
+            background: rgba(201,168,76,0.1);
+            color: var(--gold);
+            border-color: rgba(201,168,76,0.3);
+        }
+
+        /* ─────────────────────────────────────────
+     SLIDESHOW MODAL UPGRADES
+  ───────────────────────────────────────── */
+        .modal-slideshow {
+            position: relative;
+            overflow: hidden;
+            background: #060608;
+        }
+
+        .modal-slides {
+            display: flex;
+            transition: transform 0.45s cubic-bezier(0.16,1,0.3,1);
+        }
+
+        .modal-slide {
+            flex-shrink: 0;
+            width: 100%;
+        }
+
+        .modal-slide img {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .modal-slide-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 42px;
+            height: 42px;
+            background: rgba(10,10,11,0.78);
+            border: 1px solid rgba(201,168,76,0.3);
+            color: var(--white);
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s, border-color 0.2s, color 0.2s;
+            z-index: 10;
+        }
+
+        .modal-slide-nav:hover {
+            background: var(--gold);
+            color: var(--black);
+            border-color: var(--gold);
+        }
+
+        .modal-slide-prev { left: 14px; }
+        .modal-slide-next { right: 14px; }
+
+        .modal-slide-counter {
+            position: absolute;
+            bottom: 14px;
+            right: 14px;
+            background: rgba(10,10,11,0.8);
+            border: 1px solid rgba(201,168,76,0.25);
+            color: var(--gold);
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 12px;
+            letter-spacing: 2px;
+            padding: 5px 12px;
+        }
+
+        .modal-slide-dots {
+            position: absolute;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+        }
+
+        .modal-slide-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .modal-slide-dot.active {
+            background: var(--gold);
+            transform: scale(1.3);
+        }
+
         @media (max-width: 900px) {
             nav {
                 padding: 16px 24px;
@@ -2154,13 +2446,20 @@
                 padding: 24px 24px 30px;
             }
 
-            .modal-img {
+            .modal-slide img {
                 height: 240px;
             }
 
             .modal-title {
                 font-size: 40px;
             }
+
+            .recent-card-actions {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .recent-action-btn:nth-child(3) { border-left: 1px solid #2e2e32; border-top: none; }
+            .recent-action-btn:nth-child(3), .recent-action-btn:nth-child(4) { border-top: 1px solid #2e2e32; }
         }
     </style>
 </head>
@@ -2189,10 +2488,15 @@
     <div class="modal-overlay" id="vehicleModal" role="dialog" aria-modal="true">
         <div class="modal" id="modalBox">
             <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
-            <div class="modal-img-wrap">
-                <img src="" alt="" class="modal-img" id="modalImg">
-                <div class="modal-img-gradient"></div>
+            <!-- SLIDESHOW -->
+            <div class="modal-slideshow" id="modalSlideshow">
+                <div class="modal-slides" id="modalSlides"></div>
+                <button class="modal-slide-nav modal-slide-prev" id="slidePrev">&#8249;</button>
+                <button class="modal-slide-nav modal-slide-next" id="slideNext">&#8250;</button>
+                <div class="modal-slide-counter" id="slideCounter">1 / 1</div>
+                <div class="modal-slide-dots" id="slideDots"></div>
                 <div class="modal-badge" id="modalBadge"></div>
+                <div class="modal-img-gradient"></div>
             </div>
             <div class="modal-body">
                 <div class="modal-eyebrow" id="modalEyebrow"></div>
@@ -2204,7 +2508,7 @@
                         <div class="modal-price-note">Asking Price · Inquire for rental rates</div>
                     </div>
                     <button class="modal-cta"
-                        onclick="document.getElementById('vehicleModal').classList.remove('open'); document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                        onclick="document.getElementById('vehicleModal').classList.remove('open'); document.body.style.overflow=''; document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
                         Inquire Now
                     </button>
                 </div>
@@ -2219,6 +2523,7 @@
         <img src="images/logo.png" alt="Fleet Rentals USA" class="nav-logo">
         <ul class="nav-links">
             <li><a href="#fleet">Fleet</a></li>
+            <li><a href="#recent">Recent</a></li>
             <li><a href="#why">Why Us</a></li>
             <li><a href="#reviews">Reviews</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -2381,6 +2686,16 @@
             <div class="vehicle-skeleton"></div>
             <div class="vehicle-skeleton"></div>
         </div>
+    </section>
+
+    <!-- RECENT CARS -->
+    <section class="recent-section" id="recent" style="padding: 100px 60px;">
+        <div class="reveal">
+            <div class="section-eyebrow">Just Arrived</div>
+            <h2 class="section-title">Recent<br>Additions</h2>
+            <p class="section-body" style="margin-bottom:0;">Fresh inventory straight to our lot — inspected, detailed, and ready to drive.</p>
+        </div>
+        <div class="recent-grid" id="recentGrid"></div>
     </section>
 
     <!-- WHY US -->
@@ -2574,6 +2889,7 @@
         <img src="images/logo.png" alt="Fleet Rentals USA" class="footer-logo">
         <div class="footer-links">
             <a href="#fleet">Fleet</a>
+            <a href="#recent">Recent</a>
             <a href="#why">About</a>
             <a href="#reviews">Reviews</a>
             <a href="#contact">Contact</a>
@@ -2608,25 +2924,284 @@
 
         /* ── VEHICLE DATA ── */
         const vehicles = [
-            { year: 2022, make: 'Chevrolet', model: 'Malibu', trim: 'LT', type: 'sedan', mileage: '28,400', price: '$18,500', trans: 'Automatic', fuel: 'Gas', color: 'Mosaic Black', badge: 'Popular Pick', img: 'images/Mosaic Black.jpg' },
-            { year: 2021, make: 'Dodge', model: 'Charger', trim: 'SXT', type: 'sedan', mileage: '34,100', price: '$24,900', trans: 'Automatic', fuel: 'Gas', color: 'Pitch Black', badge: 'Detroit Favorite', img: 'images/Pitch Black.jpg'},
-            { year: 2021, make: 'Jeep', model: 'Grand Cherokee', trim: 'Laredo', type: 'suv', mileage: '41,200', price: '$28,900', trans: 'Automatic', fuel: 'Gas', color: 'Granite Crystal', badge: 'Family Ready', img: 'images/Granite Crystal.jpg' },
-            { year: 2020, make: 'Ford', model: 'Explorer', trim: 'XLT', type: 'suv', mileage: '52,800', price: '$26,500', trans: 'Automatic', fuel: 'Gas', color: 'Agate Black', badge: '3rd Row Seating', img: 'images/Agate Black.jpg' },
-            { year: 2022, make: 'Toyota', model: 'Camry', trim: 'SE', type: 'sedan', mileage: '19,700', price: '$22,400', trans: 'Automatic', fuel: 'Gas', color: 'Midnight Black', badge: 'Low Miles', img: 'images/Summit White.jpg' },
-            { year: 2021, make: 'Chevrolet', model: 'Silverado 1500', trim: 'LT', type: 'truck', mileage: '44,300', price: '$33,900', trans: 'Automatic', fuel: 'Gas', color: 'Summit White', badge: 'Work Ready', img: 'images/Summit White.jpg' },
-            { year: 2020, make: 'Chrysler', model: 'Pacifica', trim: 'Touring', type: 'minivan', mileage: '58,200', price: '$21,800', trans: 'Automatic', fuel: 'Gas', color: 'Brilliant Black', badge: '8 Passengers', img: 'images/Brilliant Black.jpg' },
-            { year: 2022, make: 'Honda', model: 'CR-V', trim: 'EX', type: 'suv', mileage: '23,500', price: '$27,200', trans: 'CVT', fuel: 'Gas', color: 'Lunar Silver', badge: 'Fuel Efficient', img: 'images/Lunar Silver.jpg' },
-            { year: 2021, make: 'Ford', model: 'F-150', trim: 'XLT', type: 'truck', mileage: '37,900', price: '$36,500', trans: 'Automatic', fuel: 'Gas', color: 'Iconic Silver', badge: 'Best Seller', img: 'images/Iconic Silver.jpg' },
-            { year: 2020, make: 'Nissan', model: 'Rogue', trim: 'SV', type: 'suv', mileage: '46,700', price: '$19,900', trans: 'CVT', fuel: 'Gas', color: 'Gun Metallic', badge: 'Great Value', img: 'images/Gun Metallic.jpg' },
-            { year: 2021, make: 'Dodge', model: 'Durango', trim: 'SXT', type: 'suv', mileage: '38,600', price: '$31,400', trans: 'Automatic', fuel: 'Gas', color: 'DB Black', badge: 'V6 Power', img: 'images/DB Black.jpg' },
-            { year: 2019, make: 'Cadillac', model: 'CTS', trim: '2.0T Luxury', type: 'sedan', mileage: '47,200', price: '$22,900', trans: 'Automatic', fuel: 'Gas', color: 'Black Raven', badge: 'Detroit Luxury', img: 'images/Black Raven.jpg' },
+            {
+                year: 2022, make: 'Chevrolet', model: 'Malibu', trim: 'LT', type: 'sedan',
+                mileage: '28,400', price: '$18,500', trans: 'CVT', fuel: 'Gas',
+                color: 'Mosaic Black', badge: 'Popular Pick', img: 'images/Mosaic Black.jpg',
+                engine: '1.5L Turbo · ~160–163 HP', drive: 'FWD',
+                bestFor: 'Commuters, Uber/Lyft, fuel savings',
+                highlights: ['Comfortable ride, modern interior', 'Good highway MPG (~30+ mpg)', 'Lower maintenance costs'],
+                positioning: 'Reliable, budget-friendly daily driver with great fuel efficiency.'
+            },
+            {
+                year: 2021, make: 'Dodge', model: 'Charger', trim: 'SXT', type: 'sedan',
+                mileage: '34,100', price: '$24,900', trans: 'Automatic', fuel: 'Gas',
+                color: 'Pitch Black', badge: 'Detroit Favorite', img: 'images/Pitch Black.jpg',
+                engine: '3.6L V6 · ~292 HP', drive: 'RWD',
+                bestFor: 'Style + performance mix',
+                highlights: ['Aggressive muscle car look', 'Spacious interior for a sedan', 'Strong acceleration vs competitors'],
+                positioning: 'Affordable muscle-style sedan with strong performance.'
+            },
+            {
+                year: 2021, make: 'Jeep', model: 'Grand Cherokee', trim: 'Laredo', type: 'suv',
+                mileage: '41,200', price: '$28,900', trans: 'Automatic', fuel: 'Gas',
+                color: 'Granite Crystal', badge: 'Family Ready', img: 'images/Granite Crystal.jpg',
+                engine: '3.6L V6 · ~295 HP', drive: 'RWD / 4WD',
+                bestFor: 'Off-road + daily mix',
+                highlights: ['Strong towing (up to ~7,200 lbs)', 'True SUV capability', 'Comfortable interior'],
+                positioning: 'Rugged SUV with real off-road capability and towing power.'
+            },
+            {
+                year: 2020, make: 'Ford', model: 'Explorer', trim: 'XLT', type: 'suv',
+                mileage: '52,800', price: '$26,500', trans: 'Automatic', fuel: 'Gas',
+                color: 'Agate Black', badge: '3rd Row Seating', img: 'images/Agate Black.jpg',
+                engine: '2.3L Turbo · ~300 HP', drive: 'FWD / AWD',
+                bestFor: 'Families',
+                highlights: ['3-row seating (6–7 passengers)', 'Strong engine for size', 'Tech + safety features'],
+                positioning: 'Family-ready SUV with space, power, and tech.'
+            },
+            {
+                year: 2022, make: 'Toyota', model: 'Camry', trim: 'SE', type: 'sedan',
+                mileage: '19,700', price: '$22,400', trans: 'Automatic', fuel: 'Gas',
+                color: 'Midnight Black', badge: 'Low Miles', img: 'images/Summit White.jpg',
+                engine: '2.5L 4-Cylinder · ~203 HP', drive: 'FWD',
+                bestFor: 'Reliability + resale value',
+                highlights: ['One of the most reliable sedans on market', 'Sporty SE trim (better styling)', 'Excellent resale value'],
+                positioning: 'Best balance of reliability, efficiency, and long-term value.'
+            },
+            {
+                year: 2021, make: 'Chevrolet', model: 'Silverado 1500', trim: 'LT', type: 'truck',
+                mileage: '44,300', price: '$33,900', trans: 'Automatic', fuel: 'Gas',
+                color: 'Summit White', badge: 'Work Ready', img: 'images/Summit White.jpg',
+                engine: 'V6 / V8 Options', drive: 'RWD / 4WD',
+                bestFor: 'Work + towing',
+                highlights: ['Strong towing capacity', 'Durable work truck', 'Spacious cabin'],
+                positioning: 'Reliable full-size truck built for work and hauling.'
+            },
+            {
+                year: 2020, make: 'Chrysler', model: 'Pacifica', trim: 'Touring', type: 'minivan',
+                mileage: '58,200', price: '$21,800', trans: 'Automatic', fuel: 'Gas',
+                color: 'Brilliant Black', badge: '8 Passengers', img: 'images/Brilliant Black.jpg',
+                engine: '3.6L V6', drive: 'FWD',
+                bestFor: 'Large families / ride share',
+                highlights: ["Stow 'n Go seating (fold-flat seats)", 'Very spacious (7–8 passengers)', 'Smooth ride'],
+                positioning: 'Ultimate family hauler with maximum space and comfort.'
+            },
+            {
+                year: 2022, make: 'Honda', model: 'CR-V', trim: 'EX', type: 'suv',
+                mileage: '23,500', price: '$27,200', trans: 'CVT', fuel: 'Gas',
+                color: 'Lunar Silver', badge: 'Fuel Efficient', img: 'images/Lunar Silver.jpg',
+                engine: '1.5L Turbo · ~190 HP', drive: 'FWD / AWD',
+                bestFor: 'Reliability + practicality',
+                highlights: ['Excellent fuel economy for an SUV', 'Huge cargo space', 'Very low maintenance reputation'],
+                positioning: 'Top-tier reliable compact SUV with excellent space.'
+            },
+            {
+                year: 2021, make: 'Ford', model: 'F-150', trim: 'XLT', type: 'truck',
+                mileage: '37,900', price: '$36,500', trans: 'Automatic', fuel: 'Gas',
+                color: 'Iconic Silver', badge: 'Best Seller', img: 'images/Iconic Silver.jpg',
+                engine: 'EcoBoost V6 / V8 Options', drive: 'RWD / 4WD',
+                bestFor: 'Versatility + tech',
+                highlights: ["Best-selling truck in the U.S.", 'Advanced tech features', 'Strong towing + payload'],
+                positioning: "America's top truck with strong capability and modern tech."
+            },
+            {
+                year: 2020, make: 'Nissan', model: 'Rogue', trim: 'SV', type: 'suv',
+                mileage: '46,700', price: '$19,900', trans: 'CVT', fuel: 'Gas',
+                color: 'Gun Metallic', badge: 'Great Value', img: 'images/Gun Metallic.jpg',
+                engine: '2.5L 4-Cylinder', drive: 'FWD / AWD',
+                bestFor: 'Fuel-efficient SUV, daily rentals, small families',
+                highlights: ['Excellent gas mileage', 'Smooth and comfortable ride', 'Spacious cargo area', 'Easy to drive in city and highway'],
+                positioning: 'Reliable, fuel-efficient SUV perfect for everyday travel and comfort.'
+            },
+            {
+                year: 2021, make: 'Dodge', model: 'Durango', trim: 'SXT', type: 'suv',
+                mileage: '38,600', price: '$31,400', trans: 'Automatic', fuel: 'Gas',
+                color: 'DB Black', badge: 'V6 Power', img: 'images/DB Black.jpg',
+                engine: '3.6L V6', drive: 'RWD / AWD',
+                bestFor: 'Sporty SUV feel',
+                highlights: ['Muscle-style SUV design (3 rows)', 'Strong towing for class', 'Spacious family interior'],
+                positioning: 'Sporty SUV with muscle car DNA and family capability.'
+            },
+            {
+                year: 2019, make: 'Cadillac', model: 'CTS', trim: '2.0T Luxury', type: 'sedan',
+                mileage: '47,200', price: '$22,900', trans: 'Automatic', fuel: 'Gas',
+                color: 'Black Raven', badge: 'Detroit Luxury', img: 'images/Black Raven.jpg',
+                engine: '2.0L Turbo · ~265 HP', drive: 'RWD / AWD',
+                bestFor: 'Entry luxury buyers',
+                highlights: ['Premium interior + brand prestige', 'Smooth ride, quiet cabin', 'Strong turbo performance'],
+                positioning: 'Luxury feel at an affordable price point.'
+            },
         ];
 
+        /* ── RECENT CARS DATA ── */
+        // Images arrays use paths relative to your images/ folder.
+        // Replace 'images/recent/jeep-compass-XX.jpg' with your actual image file paths.
+        const recentCars = [
+            {
+                title: '2013 JEEP COMPASS LATITUDE',
+                subtitle: 'Sport Utility 4D',
+                drivetrain: '4WD',
+                transmission: 'AUTOMATIC',
+                engine: '4-CYL, 2.4 LITER',
+                mileage: '140,607',
+                doors: '4',
+                vin: '1C4NJDEB6DD261586',
+                stock: '2082',
+                badge: 'Just Arrived',
+                // 9 images — replace src paths with your actual image files
+                images: [
+                    'images/Jeep_Compass1.jpg',
+                    'images/Jeep_Compass2.jpg',
+                  'images/Jeep_Compass3.jpg',
+                    'images/Jeep_Compass4.jpg',
+                     'images/Jeep_Compass5.jpg',
+                    'images/Jeep_Compass6.jpg',
+                     'images/Jeep_Compass7.jpg',
+                    'images/Jeep_Compass8.jpg',
+                     'images/Jeep_Compass9.jpg',
+                ],
+                fallback: 'images/Jeep_Compass1.jpg'
+            },
+            {
+                title: '2016 FORD FOCUS SE',
+                subtitle: 'Hatchback 4D',
+                drivetrain: 'FWD',
+                transmission: 'AUTOMATIC',
+                engine: '3-CYL, ECOBOOST, 1.0T',
+                mileage: '159,613',
+                doors: '4',
+                vin: '1FADP3KE8GL244095',
+                stock: '2093',
+                badge: 'Great Value',
+                // 8 images
+                images: [
+                    'images/Ford_Focus5.jpg',
+                    'images/Ford_Focus2.jpg',
+                    'images/Ford_Focus6.jpg',
+                    'images/Ford_Focus3.jpg',
+                     'images/Ford_Focus4.jpg',
+                    'images/Ford_Focus1.jpg',
+                     'images/Ford_Focus7.jpg',
+                    'images/Ford_Focus8.jpg',
+                ],
+                fallback: 'images/Ford_Focus5.jpg'
+            },
+            {
+                title: '2010 MERCURY MILAN PREMIER',
+                subtitle: 'Sedan 4D',
+                drivetrain: 'FWD',
+                transmission: 'AUTOMATIC',
+                engine: '4-CYL, 2.5 LITER',
+                mileage: '179,372',
+                doors: '4',
+                vin: '3MEHM0JA4AR605251',
+                stock: '2045',
+                badge: 'Classic Pick',
+                // 9 images
+                images: [
+                    'images/Mercury_Milan1.jpg',
+                    'images/Mercury_Milan2.jpg',
+                    'images/Mercury_Milan3.jpg',
+                    'images/Mercury_Milan4.jpg',
+                    'images/Mercury_Milan5.jpg',
+                    'images/Mercury_Milan6.jpg',
+                    'images/Mercury_Milan7.jpg',
+                    'images/Mercury_Milan8.jpg',
+                    'images/Mercury_Milan9.jpg',
+                ],
+                fallback: 'images/Mercury_Milan1.jpg',
+            },
+            {
+                title: '2015 DODGE JOURNEY R/T',
+                subtitle: 'Sport Utility 4D',
+                drivetrain: 'AWD',
+                transmission: 'AUTOMATIC',
+                engine: 'V6, 3.6 LITER',
+                mileage: '163,292',
+                doors: '4',
+                vin: '3C4PDDFG9FT544569',
+                stock: '2081',
+                badge: 'AWD Ready',
+                // 7 images
+                images: [
+                    'images/Dodge_Journey1.jpg',
+                    'images/Dodge_Journey3.jpg',
+                    'images/Dodge_Journey4.jpg',
+                    'images/Dodge_Journey5.jpg',
+                       'images/Dodge_Journey6.jpg',
+                    'images/Dodge_Journey7.jpg',
+                    'images/Dodge_Journey8.jpg',
+                ],
+                fallback: 'images/Dodge_Journey1.jpg',
+            },
+        ];
+
+        /* ── SLIDESHOW STATE ── */
+        let currentSlide = 0;
+        let currentSlideImages = [];
+
+        function buildSlides(images, fallback) {
+            const slidesEl = document.getElementById('modalSlides');
+            const dotsEl = document.getElementById('slideDots');
+            slidesEl.innerHTML = '';
+            dotsEl.innerHTML = '';
+            currentSlideImages = images;
+            currentSlide = 0;
+
+            images.forEach((src, i) => {
+                const slide = document.createElement('div');
+                slide.className = 'modal-slide';
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = `Photo ${i+1}`;
+                img.onerror = function() { this.src = fallback; };
+                slide.appendChild(img);
+                slidesEl.appendChild(slide);
+
+                const dot = document.createElement('div');
+                dot.className = 'modal-slide-dot' + (i === 0 ? ' active' : '');
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsEl.appendChild(dot);
+            });
+
+            updateSlideUI();
+        }
+
+        function goToSlide(n) {
+            currentSlide = (n + currentSlideImages.length) % currentSlideImages.length;
+            updateSlideUI();
+        }
+
+        function updateSlideUI() {
+            document.getElementById('modalSlides').style.transform = `translateX(-${currentSlide * 100}%)`;
+            document.getElementById('slideCounter').textContent = `${currentSlide + 1} / ${currentSlideImages.length}`;
+            document.querySelectorAll('.modal-slide-dot').forEach((d, i) => {
+                d.classList.toggle('active', i === currentSlide);
+            });
+            // Hide nav arrows if only 1 image
+            const single = currentSlideImages.length <= 1;
+            document.getElementById('slidePrev').style.display = single ? 'none' : '';
+            document.getElementById('slideNext').style.display = single ? 'none' : '';
+            document.getElementById('slideCounter').style.display = single ? 'none' : '';
+        }
+
+        document.getElementById('slidePrev').addEventListener('click', () => goToSlide(currentSlide - 1));
+        document.getElementById('slideNext').addEventListener('click', () => goToSlide(currentSlide + 1));
+
+        // Keyboard arrow navigation when modal is open
+        document.addEventListener('keydown', e => {
+            if (!document.getElementById('vehicleModal').classList.contains('open')) return;
+            if (e.key === 'ArrowLeft') goToSlide(currentSlide - 1);
+            if (e.key === 'ArrowRight') goToSlide(currentSlide + 1);
+        });
+
+        /* ── FALLBACK IMAGES ── */
         const fallbackImgs = {
             sedan: 'images/Pitch Black.jpeg',
-            suv: 'https://www.motortrend.com/uploads/2021/09/2022-jeep-grand-cherokee-wl-front-three-quarter.jpg',
-            truck: 'https://www.motortrend.com/uploads/2022/01/2022-ford-f150-front-three-quarter.jpg',
-            minivan: 'https://www.motortrend.com/uploads/2020/09/2021-chrysler-pacifica-touring-l-plus-front-three-quarter.jpg',
+            suv: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800&q=80',
+            truck: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80',
+            minivan: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80',
         };
 
         let activeFilter = 'all';
@@ -2635,26 +3210,45 @@
         const modalOverlay = document.getElementById('vehicleModal');
         const modalClose = document.getElementById('modalClose');
 
-        function openModal(v) {
-            document.getElementById('modalImg').src = v.img;
-            document.getElementById('modalImg').alt = `${v.year} ${v.make} ${v.model}`;
-            document.getElementById('modalImg').onerror = function () { this.src = fallbackImgs[v.type] || fallbackImgs.sedan; };
-            document.getElementById('modalBadge').textContent = v.badge;
-            document.getElementById('modalEyebrow').textContent = `${v.year} · ${v.color}`;
-            document.getElementById('modalTitle').textContent = `${v.make} ${v.model} ${v.trim}`;
-            document.getElementById('modalPrice').textContent = v.price;
-
-            document.getElementById('modalSpecs').innerHTML = `
-      <div class="modal-spec-box"><div class="modal-spec-label">Mileage</div><div class="modal-spec-val">${v.mileage} mi</div></div>
-      <div class="modal-spec-box"><div class="modal-spec-label">Transmission</div><div class="modal-spec-val">${v.trans}</div></div>
-      <div class="modal-spec-box"><div class="modal-spec-label">Fuel</div><div class="modal-spec-val">${v.fuel}</div></div>
-      <div class="modal-spec-box"><div class="modal-spec-label">Type</div><div class="modal-spec-val">${v.type.toUpperCase()}</div></div>
-      <div class="modal-spec-box"><div class="modal-spec-label">Color</div><div class="modal-spec-val">${v.color}</div></div>
-      <div class="modal-spec-box"><div class="modal-spec-label">Year</div><div class="modal-spec-val">${v.year}</div></div>
-    `;
-
+        function openModal(images, fallback, badge, eyebrow, title, price, specsHTML) {
+            buildSlides(images, fallback);
+            document.getElementById('modalBadge').textContent = badge;
+            document.getElementById('modalEyebrow').textContent = eyebrow;
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalPrice').textContent = price || '';
+            document.getElementById('modalSpecs').innerHTML = specsHTML;
             modalOverlay.classList.add('open');
             document.body.style.overflow = 'hidden';
+        }
+
+        function openVehicleModal(v) {
+            const images = [v.img];
+            const highlightsHTML = v.highlights ? v.highlights.map(h => `<span style="display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:14px;color:var(--silver);"><span style="color:var(--gold);font-size:12px;">&#10022;</span>${h}</span>`).join('') : '';
+            const specsHTML = `
+              <div class="modal-spec-box"><div class="modal-spec-label">Engine</div><div class="modal-spec-val">${v.engine || '&#8212;'}</div></div>
+              <div class="modal-spec-box"><div class="modal-spec-label">Transmission</div><div class="modal-spec-val">${v.trans}</div></div>
+              <div class="modal-spec-box"><div class="modal-spec-label">Drive</div><div class="modal-spec-val">${v.drive || v.type.toUpperCase()}</div></div>
+              <div class="modal-spec-box"><div class="modal-spec-label">Mileage</div><div class="modal-spec-val">${v.mileage} mi</div></div>
+              <div class="modal-spec-box"><div class="modal-spec-label">Color</div><div class="modal-spec-val">${v.color}</div></div>
+              <div class="modal-spec-box"><div class="modal-spec-label">Fuel</div><div class="modal-spec-val">${v.fuel}</div></div>
+              ${v.bestFor ? `<div class="modal-spec-box" style="grid-column:1/-1"><div class="modal-spec-label">Best For</div><div class="modal-spec-val">${v.bestFor}</div></div>` : ''}
+              ${v.highlights ? `<div style="grid-column:1/-1;margin-top:6px;padding-top:14px;border-top:1px solid rgba(201,168,76,0.12)"><div class="modal-spec-label" style="margin-bottom:10px;letter-spacing:2px;">Highlights</div>${highlightsHTML}</div>` : ''}
+              ${v.positioning ? `<div style="grid-column:1/-1;background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.18);border-radius:8px;padding:12px 16px;margin-top:4px;font-size:13px;color:var(--gold-light);font-style:italic;letter-spacing:0.3px;">"${v.positioning}"</div>` : ''}
+            `;
+            openModal(images, fallbackImgs[v.type] || fallbackImgs.sedan, v.badge, `${v.year} · ${v.color}`, `${v.make} ${v.model} ${v.trim}`, v.price, specsHTML);
+        }
+
+        function openRecentModal(r) {
+            const specsHTML = `
+              <div class="modal-spec-box"><div class="modal-spec-label">Drivetrain</div><div class="modal-spec-val">${r.drivetrain}</div></div>
+              <div class="modal-spec-box"><div class="modal-spec-label">Transmission</div><div class="modal-spec-val">${r.transmission}</div></div>
+              <div class="modal-spec-box"><div class="modal-spec-label">Engine</div><div class="modal-spec-val">${r.engine}</div></div>
+              <div class="modal-spec-box"><div class="modal-spec-label">Mileage</div><div class="modal-spec-val">${r.mileage} mi</div></div>
+              <div class="modal-spec-box"><div class="modal-spec-label">Doors</div><div class="modal-spec-val">${r.doors}</div></div>
+              <div class="modal-spec-box"><div class="modal-spec-label">Stock #</div><div class="modal-spec-val">${r.stock}</div></div>
+              <div class="modal-spec-box"><div class="modal-spec-label">VIN</div><div class="modal-spec-val" style="font-size:13px;letter-spacing:0">${r.vin}</div></div>
+            `;
+            openModal(r.images, r.fallback, r.badge, r.subtitle, r.title, '', specsHTML);
         }
 
         function closeModal() {
@@ -2666,7 +3260,7 @@
         modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) closeModal(); });
         document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-        /* ── RENDER VEHICLES ── */
+        /* ── RENDER FLEET VEHICLES ── */
         function renderVehicles() {
             const grid = document.getElementById('vehicleGrid');
             const filtered = activeFilter === 'all' ? vehicles : vehicles.filter(v => v.type === activeFilter);
@@ -2697,16 +3291,85 @@
       </div>
     `).join('');
 
-            // Attach click to each card — open modal
             grid.querySelectorAll('.vehicle-card').forEach(card => {
                 card.addEventListener('click', () => {
                     const idx = parseInt(card.dataset.index);
-                    openModal(vehicles[idx]);
+                    openVehicleModal(vehicles[idx]);
                 });
             });
 
-            // Re-observe new cards
             document.querySelectorAll('.vehicle-card.reveal').forEach(el => observer.observe(el));
+        }
+
+        /* ── RENDER RECENT CARS ── */
+        function renderRecentCars() {
+            const grid = document.getElementById('recentGrid');
+            grid.innerHTML = recentCars.map((r, i) => `
+        <div class="recent-card reveal" style="animation-delay:${i * 0.1}s" data-recent="${i}">
+          <div class="recent-card-img">
+            <div class="recent-compare"><input type="checkbox" onclick="event.stopPropagation()"> Compare</div>
+            <img src="${r.images[0]}" alt="${r.title}" onerror="this.src='${r.fallback}'" loading="lazy">
+            <div class="recent-card-img-count">&#128247; ${r.images.length} Photos</div>
+          </div>
+          <div class="recent-card-body">
+            <div class="recent-card-title">${r.title}</div>
+            <div class="recent-specs-grid">
+              <div class="recent-spec">
+                <div class="recent-spec-label">Drivetrain</div>
+                <div class="recent-spec-val">${r.drivetrain}</div>
+              </div>
+              <div class="recent-spec">
+                <div class="recent-spec-label">Transmission</div>
+                <div class="recent-spec-val">${r.transmission}</div>
+              </div>
+              <div class="recent-spec">
+                <div class="recent-spec-label">Engine</div>
+                <div class="recent-spec-val">${r.engine}</div>
+              </div>
+              <div class="recent-spec">
+                <div class="recent-spec-label">Mileage</div>
+                <div class="recent-spec-val">${r.mileage}</div>
+              </div>
+              <div class="recent-spec">
+                <div class="recent-spec-label">Doors</div>
+                <div class="recent-spec-val">${r.doors}</div>
+              </div>
+              <div class="recent-spec">
+                <div class="recent-spec-label">Stock #</div>
+                <div class="recent-spec-val">${r.stock}</div>
+              </div>
+            </div>
+            <div class="recent-ids">
+              <div class="recent-id-item">
+                <div class="recent-spec-label">VIN</div>
+                <div class="recent-spec-val" style="font-size:12px;letter-spacing:0">${r.vin}</div>
+              </div>
+              <div class="recent-id-item">
+                <div class="recent-spec-label">Stock Number</div>
+                <div class="recent-spec-val">${r.stock}</div>
+              </div>
+            </div>
+            <div class="recent-card-actions">
+              <button class="recent-action-btn" onclick="event.stopPropagation(); alert('Please call us at (313) 513-1333 to confirm availability.')">Confirm Availability</button>
+              <button class="recent-action-btn" onclick="event.stopPropagation(); document.getElementById('vehicleModal').classList.remove('open'); document.body.style.overflow=''; document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Request a Quote</button>
+              <button class="recent-action-btn" onclick="event.stopPropagation(); alert('Please call (313) 513-1333 to discuss financing options.')">Financing</button>
+              <button class="recent-action-btn primary view-details-btn">View Details</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+            grid.querySelectorAll('.recent-card').forEach(card => {
+                const idx = parseInt(card.dataset.recent);
+                // Clicking card or "View Details" opens modal
+                card.addEventListener('click', (e) => {
+                    if (e.target.type === 'checkbox') return;
+                    if (e.target.classList.contains('recent-action-btn') && !e.target.classList.contains('view-details-btn')) return;
+                    openRecentModal(recentCars[idx]);
+                });
+            });
+
+            grid.querySelectorAll('.recent-card.reveal').forEach(el => observer.observe(el));
         }
 
         // Filter tabs
@@ -2728,6 +3391,7 @@
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         renderVehicles();
+        renderRecentCars();
 
         /* ── NAV SCROLL ── */
         const nav = document.querySelector('nav');
