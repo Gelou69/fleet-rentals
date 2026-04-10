@@ -22,7 +22,9 @@
             --white: #F4F1EC;
             --text-muted: #6B6B75;
         }
-
+.filter-tabs.reveal.visible {
+    margin-top: 30px;
+}
         *,
         *::before,
         *::after {
@@ -430,21 +432,21 @@
             animation: fadeUp 0.9s 0.75s both;
         }
 
-    .btn-primary {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 15px;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    font-weight: 700;
-    background: var(--gold);
-    color: var(--black);
-    border: none;
-    padding: 17px 44px;
-    cursor: pointer;
-    transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
-    clip-path: none;
-    border-radius: 30px;
-}
+        .btn-primary {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 15px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            font-weight: 700;
+            background: var(--gold);
+            color: var(--black);
+            border: none;
+            padding: 17px 44px;
+            cursor: pointer;
+            transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+            clip-path: none;
+            border-radius: 30px;
+        }
 
         .btn-primary:hover {
             background: var(--gold-light);
@@ -453,19 +455,19 @@
         }
 
         .btn-outline {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 15px;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    font-weight: 600;
-    background: transparent;
-    color: var(--silver);
-    border: 1px solid rgba(184, 196, 204, 0.35);
-    padding: 17px 44px;
-    cursor: pointer;
-    transition: border-color 0.25s, color 0.25s, transform 0.2s;
-    border-radius: 20pc;
-}
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 15px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            font-weight: 600;
+            background: transparent;
+            color: var(--silver);
+            border: 1px solid rgba(184, 196, 204, 0.35);
+            padding: 17px 44px;
+            cursor: pointer;
+            transition: border-color 0.25s, color 0.25s, transform 0.2s;
+            border-radius: 20pc;
+        }
 
         .btn-outline:hover {
             border-color: var(--gold);
@@ -1408,20 +1410,20 @@
         }
 
         .modal-cta {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 15px;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    font-weight: 700;
-    background: var(--gold);
-    color: var(--black);
-    border: none;
-    padding: 17px 44px;
-    cursor: pointer;
-    transition: background 0.25s, transform 0.2s;
-    clip-path: none; 
-    border-radius: 50px; 
-}
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 15px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            font-weight: 700;
+            background: var(--gold);
+            color: var(--black);
+            border: none;
+            padding: 17px 44px;
+            cursor: pointer;
+            transition: background 0.25s, transform 0.2s;
+            clip-path: none;
+            border-radius: 50px;
+        }
 
         .modal-cta:hover {
             background: var(--gold-light);
@@ -2132,19 +2134,23 @@
         .recent-card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             height: 2px;
             background: linear-gradient(90deg, transparent, var(--gold), transparent);
             transform: scaleX(0);
             transition: transform 0.4s;
         }
 
-        .recent-card:hover::before { transform: scaleX(1); }
+        .recent-card:hover::before {
+            transform: scaleX(1);
+        }
 
         .recent-card:hover {
-            border-color: rgba(201,168,76,0.45);
+            border-color: rgba(201, 168, 76, 0.45);
             transform: translateY(-4px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 30px rgba(201,168,76,0.05);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(201, 168, 76, 0.05);
         }
 
         .recent-card-img {
@@ -2159,17 +2165,19 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .recent-card:hover .recent-card-img img { transform: scale(1.06); }
+        .recent-card:hover .recent-card-img img {
+            transform: scale(1.06);
+        }
 
         .recent-card-img-count {
             position: absolute;
             bottom: 10px;
             right: 10px;
-            background: rgba(10,10,11,0.82);
-            border: 1px solid rgba(201,168,76,0.3);
+            background: rgba(10, 10, 11, 0.82);
+            border: 1px solid rgba(201, 168, 76, 0.3);
             color: var(--gold);
             font-family: 'Barlow Condensed', sans-serif;
             font-size: 11px;
@@ -2188,12 +2196,17 @@
             font-size: 12px;
             letter-spacing: 1px;
             color: var(--silver);
-            background: rgba(10,10,11,0.75);
+            background: rgba(10, 10, 11, 0.75);
             padding: 4px 10px;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .recent-compare input { width: 13px; height: 13px; cursor: pointer; accent-color: var(--gold); }
+        .recent-compare input {
+            width: 13px;
+            height: 13px;
+            cursor: pointer;
+            accent-color: var(--gold);
+        }
 
         .recent-card-body {
             padding: 20px 22px 22px;
@@ -2224,8 +2237,13 @@
             border-right: 1px solid #2e2e32;
         }
 
-        .recent-spec:last-child { border-right: none; }
-        .recent-spec:nth-child(4), .recent-spec:nth-child(5), .recent-spec:nth-child(6) {
+        .recent-spec:last-child {
+            border-right: none;
+        }
+
+        .recent-spec:nth-child(4),
+        .recent-spec:nth-child(5),
+        .recent-spec:nth-child(6) {
             border-top: 1px solid #2e2e32;
         }
 
@@ -2259,7 +2277,9 @@
             padding: 8px 12px;
         }
 
-        .recent-id-item:first-child { border-right: 1px solid #2e2e32; }
+        .recent-id-item:first-child {
+            border-right: 1px solid #2e2e32;
+        }
 
         .recent-card-actions {
             display: grid;
@@ -2282,7 +2302,9 @@
             transition: background 0.2s, color 0.2s, border-color 0.2s;
         }
 
-        .recent-action-btn:first-child { border-left: 1px solid #2e2e32; }
+        .recent-action-btn:first-child {
+            border-left: 1px solid #2e2e32;
+        }
 
         .recent-action-btn.primary {
             background: var(--gold);
@@ -2290,7 +2312,9 @@
             border-color: var(--gold);
         }
 
-        .recent-action-btn.primary:hover { background: var(--gold-light); }
+        .recent-action-btn.primary:hover {
+            background: var(--gold-light);
+        }
 
         .recent-action-btn:not(.primary) {
             background: #111113;
@@ -2298,9 +2322,9 @@
         }
 
         .recent-action-btn:not(.primary):hover {
-            background: rgba(201,168,76,0.1);
+            background: rgba(201, 168, 76, 0.1);
             color: var(--gold);
-            border-color: rgba(201,168,76,0.3);
+            border-color: rgba(201, 168, 76, 0.3);
         }
 
         /* ─────────────────────────────────────────
@@ -2314,7 +2338,7 @@
 
         .modal-slides {
             display: flex;
-            transition: transform 0.45s cubic-bezier(0.16,1,0.3,1);
+            transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .modal-slide {
@@ -2335,8 +2359,8 @@
             transform: translateY(-50%);
             width: 42px;
             height: 42px;
-            background: rgba(10,10,11,0.78);
-            border: 1px solid rgba(201,168,76,0.3);
+            background: rgba(10, 10, 11, 0.78);
+            border: 1px solid rgba(201, 168, 76, 0.3);
             color: var(--white);
             font-size: 20px;
             cursor: pointer;
@@ -2353,15 +2377,20 @@
             border-color: var(--gold);
         }
 
-        .modal-slide-prev { left: 14px; }
-        .modal-slide-next { right: 14px; }
+        .modal-slide-prev {
+            left: 14px;
+        }
+
+        .modal-slide-next {
+            right: 14px;
+        }
 
         .modal-slide-counter {
             position: absolute;
             bottom: 14px;
             right: 14px;
-            background: rgba(10,10,11,0.8);
-            border: 1px solid rgba(201,168,76,0.25);
+            background: rgba(10, 10, 11, 0.8);
+            border: 1px solid rgba(201, 168, 76, 0.25);
             color: var(--gold);
             font-family: 'Barlow Condensed', sans-serif;
             font-size: 12px;
@@ -2382,7 +2411,7 @@
             width: 6px;
             height: 6px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.3);
+            background: rgba(255, 255, 255, 0.3);
             cursor: pointer;
             transition: background 0.2s, transform 0.2s;
         }
@@ -2459,8 +2488,15 @@
                 grid-template-columns: 1fr 1fr;
             }
 
-            .recent-action-btn:nth-child(3) { border-left: 1px solid #2e2e32; border-top: none; }
-            .recent-action-btn:nth-child(3), .recent-action-btn:nth-child(4) { border-top: 1px solid #2e2e32; }
+            .recent-action-btn:nth-child(3) {
+                border-left: 1px solid #2e2e32;
+                border-top: none;
+            }
+
+            .recent-action-btn:nth-child(3),
+            .recent-action-btn:nth-child(4) {
+                border-top: 1px solid #2e2e32;
+            }
         }
     </style>
 </head>
@@ -2670,7 +2706,17 @@
 
         </div>
 
-        <!-- Filter tabs -->
+
+        <!-- RECENT CARS -->
+        <section class="recent-section" id="recent" style="padding: 100px 60px;">
+            <div class="reveal">
+                <div class="section-eyebrow">Just Arrived</div>
+                <h2 class="section-title">Recent<br>Additions</h2>
+                <p class="section-body" style="margin-bottom:0;">Fresh inventory straight to our lot — inspected,
+                    detailed, and ready to drive.</p>
+            </div>
+            <div class="recent-grid" id="recentGrid"></div>
+        </section>
         <div class="filter-tabs reveal" style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px;">
             <button class="filter-btn active" data-filter="all">All Vehicles</button>
             <button class="filter-btn" data-filter="sedan">Sedans</button>
@@ -2678,7 +2724,6 @@
             <button class="filter-btn" data-filter="truck">Trucks</button>
             <button class="filter-btn" data-filter="minivan">Minivans</button>
         </div>
-
         <div class="vehicle-grid" id="vehicleGrid">
             <div class="vehicle-skeleton"></div>
             <div class="vehicle-skeleton"></div>
@@ -2689,15 +2734,6 @@
         </div>
     </section>
 
-    <!-- RECENT CARS -->
-    <section class="recent-section" id="recent" style="padding: 100px 60px;">
-        <div class="reveal">
-            <div class="section-eyebrow">Just Arrived</div>
-            <h2 class="section-title">Recent<br>Additions</h2>
-            <p class="section-body" style="margin-bottom:0;">Fresh inventory straight to our lot — inspected, detailed, and ready to drive.</p>
-        </div>
-        <div class="recent-grid" id="recentGrid"></div>
-    </section>
 
     <!-- WHY US -->
     <section id="why" style="padding: 100px 60px;">
@@ -3054,13 +3090,13 @@
                 images: [
                     'images/Jeep_Compass1.jpg',
                     'images/Jeep_Compass2.jpg',
-                  'images/Jeep_Compass3.jpg',
+                    'images/Jeep_Compass3.jpg',
                     'images/Jeep_Compass4.jpg',
-                     'images/Jeep_Compass5.jpg',
+                    'images/Jeep_Compass5.jpg',
                     'images/Jeep_Compass6.jpg',
-                     'images/Jeep_Compass7.jpg',
+                    'images/Jeep_Compass7.jpg',
                     'images/Jeep_Compass8.jpg',
-                     'images/Jeep_Compass9.jpg',
+                    'images/Jeep_Compass9.jpg',
                 ],
                 fallback: 'images/Jeep_Compass1.jpg'
             },
@@ -3081,9 +3117,9 @@
                     'images/Ford_Focus2.jpg',
                     'images/Ford_Focus6.jpg',
                     'images/Ford_Focus3.jpg',
-                     'images/Ford_Focus4.jpg',
+                    'images/Ford_Focus4.jpg',
                     'images/Ford_Focus1.jpg',
-                     'images/Ford_Focus7.jpg',
+                    'images/Ford_Focus7.jpg',
                     'images/Ford_Focus8.jpg',
                 ],
                 fallback: 'images/Ford_Focus5.jpg'
@@ -3130,7 +3166,7 @@
                     'images/Dodge_Journey3.jpg',
                     'images/Dodge_Journey4.jpg',
                     'images/Dodge_Journey5.jpg',
-                       'images/Dodge_Journey6.jpg',
+                    'images/Dodge_Journey6.jpg',
                     'images/Dodge_Journey7.jpg',
                     'images/Dodge_Journey8.jpg',
                 ],
@@ -3155,8 +3191,8 @@
                 slide.className = 'modal-slide';
                 const img = document.createElement('img');
                 img.src = src;
-                img.alt = `Photo ${i+1}`;
-                img.onerror = function() { this.src = fallback; };
+                img.alt = `Photo ${i + 1}`;
+                img.onerror = function () { this.src = fallback; };
                 slide.appendChild(img);
                 slidesEl.appendChild(slide);
 
